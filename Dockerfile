@@ -14,6 +14,7 @@ RUN apt-get update && \
           librtaudio-dev \
           qt5-default \ 
           qt5-qmake \
+          g++ \
           git \
           ca-certificates
 
@@ -22,8 +23,6 @@ RUN mkdir /tmp/jacktrip-build && \
         https://github.com/jacktrip/jacktrip.git /tmp/jacktrip-build
 
 WORKDIR /tmp/jacktrip-build/src
-
-RUN apt-get install -y --no-install-recommends g++
 
 RUN qmake jacktrip.pro && make install
 
