@@ -16,7 +16,7 @@ $ docker create sandreae/pypatcher_deps:latest
 $ docker cp {{CONTAINER_ID:build}}/. /usr/local/bin/
 ```
 
-### from repo
+### From repo
 
 ```
 $ git clone https://github.com/sandreae/jacktrip-builder
