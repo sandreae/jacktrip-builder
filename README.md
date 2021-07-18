@@ -5,7 +5,8 @@ Several Dockerfiles for building the following:
 - JackTrip built in Ubuntu 20.04 container
 - JackTrip built in Raspberry Pi OS container
 - JackTrip + other dependencies needed for running a [`pypatcher`](https://github.com/noiseorchestra/jacktrip_pypatcher) server built in Ubuntu 20.04 container
-## Deploy
+
+## Build
 
 ### From docker hub (just pypatcher atm)
 
@@ -15,7 +16,7 @@ $ docker create sandreae/pypatcher_deps:latest
 $ docker cp {{CONTAINER_ID:build}}/. /usr/local/bin/
 ```
 
-### Build and deploy from repo
+### from repo
 
 ```
 $ git clone https://github.com/sandreae/jacktrip-builder
