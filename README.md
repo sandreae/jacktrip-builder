@@ -1,11 +1,28 @@
-# Jacktrip Docker
+# Build JackTrip (+ other useful deps)
 
+Several Dockerfiles for building the following:
+
+- JackTrip built in Ubuntu 20.04 container
+- JackTrip built in Raspberry Pi OS container
+- JackTrip + other dependencies needed for running a [`pypatcher`](https://github.com/noiseorchestra/jacktrip_pypatcher) server built in Ubuntu 20.04 container
 ## Deploy
 
-`$ git clone https://github.com/sandreae/jacktrip-docker`
+### From docker hub (just pypatcher atm)
 
-`$ cd jacktrip-docker`
+```
+$ docker create sandreae/pypatcher_deps:latest
+# prints CONTAINER_ID
+$ docker cp {{CONTAINER_ID:build}}/. /usr/local/bin/
+```
 
-`$ docker build -t jacktrip .`
+### Build and deploy from repo
 
-`$ docker run --ulimit rtprio=99 -p 4464:4464 -p 4464:4464/udp -p 61002:61002/udp jacktrip:latest`
+```
+$ git clone https://github.com/sandreae/jacktrip-docker
+# Enter the relevent folder
+$ cd jacktrip
+$ docker built -t jacktrip-builder .
+$ docker create jacktrip-builder
+# prints CONTAINER_ID
+$ docker cp {{CONTAINER_ID:build}}/. build/
+```
