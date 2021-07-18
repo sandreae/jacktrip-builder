@@ -18,11 +18,11 @@ $ docker cp {{CONTAINER_ID:build}}/. /usr/local/bin/
 ### Build and deploy from repo
 
 ```
-$ git clone https://github.com/sandreae/jacktrip-docker
+$ git clone https://github.com/sandreae/jacktrip-builder
 # Enter the relevent folder
 $ cd jacktrip
 $ docker built -t jacktrip-builder .
 $ docker create jacktrip-builder
 # prints CONTAINER_ID
-$ docker cp {{CONTAINER_ID:build}}/. build/
+$ docker cp {{CONTAINER_ID:build}}/. /usr/local/bin/
 ```
